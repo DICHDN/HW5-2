@@ -102,6 +102,19 @@ public:
         this->field1 = 3;
         this->name = "треугольник";
     }
+    triangle(int a, int b, int c, int A, int B, int C)
+    {
+        this->field1 = 3;
+        this->name = "треугольник";
+        this->C = 90;
+        this->a = a;
+        this->b = b;
+        this->c = c;
+        this->A = A;
+        this->B = B;
+        this->C = C;
+
+    }
     void get_info() override
     {
         std::cout << "Простая фигура с количеством сторн " << field1 << " - это " << name << std::endl;
@@ -132,9 +145,19 @@ class triangle90 : public triangle
 public:
     triangle90()
     {
-        this->field1 = 3;
         this->name = "прямоугольный треугольник";
         this->C = 90;
+    }
+
+    triangle90(int a,int b,int c,int A,int B)
+    {
+        this->name = "прямоугольный треугольник";
+        this->C = 90;
+        this->a = a;
+        this->b = b;
+        this->c = c;
+        this->A = A;
+        this->B = B;
     }
 };
 
@@ -143,10 +166,21 @@ class isosceles_triangle :public triangle
 public:
     isosceles_triangle()
     {
-        this->field1 = 3;
         this->name = "равнобедренный треугольник";
         this->c = a;
         this->C = A;
+    }
+
+
+    isosceles_triangle(int a, int b, int A, int B)
+    {
+        this->name = "равнобедренный треугольник";
+        this->c = a;
+        this->C = A;
+        this->a = a;
+        this->b = b;
+        this->A = A;
+        this->B = B;
     }
 };
 class equilateral_triangle : public triangle
@@ -154,13 +188,24 @@ class equilateral_triangle : public triangle
 public:
     equilateral_triangle()
     {
-        this->field1 = 3;
         this->name = "равносторонний треугольник";
         this->A = 60;
         this->c = a;
         this->b = a;
         this->C = A;
         this->B = A;
+        this->a = a;
+    }
+
+    equilateral_triangle(int a)
+    {
+        this->name = "равносторонний треугольник";
+        this->A = 60;
+        this->c = a;
+        this->b = a;
+        this->C = A;
+        this->B = A;
+        this->a = a;
     }
 };
 
@@ -170,6 +215,19 @@ public:
     rectangle()
     {
         this->name = "прямоугольник";
+        this->c = a;
+        this->d = b;
+        this->A = 90;
+        this->B = A;
+        this->C = A;
+        this->D = A;
+    }
+
+    rectangle(int a, int b)
+    {
+        this->name = "прямоугольник";
+        this->a = a;
+        this->b = b;
         this->c = a;
         this->d = b;
         this->A = 90;
@@ -188,11 +246,17 @@ public:
         this->c = a;
         this->b = a;
         this->d = a;
-        this->A = 90;
-        this->B = A;
-        this->C = A;
-        this->D = A;
-    }    
+
+    }
+
+    square(int a)
+    {
+        this->name = "квадрат";
+        this->a = a;
+        this->c = a;
+        this->b = a;
+        this->d = a;
+     }    
     
 };
 class parallelogram : public quadrilateral
@@ -206,6 +270,19 @@ public:
         this->C = A;
         this->D = B;
     }
+
+    parallelogram(int a, int b, int A, int B)
+    {
+        this->name = "параллелограмм";
+        this->a = a;
+        this->c = a;
+        this->b = b;
+        this->d = b;
+        this->A = A;
+        this->C = A;
+        this->B = B;
+        this->D = B;
+    }
     
 };
 class rhomb : public parallelogram
@@ -217,6 +294,16 @@ public:
         this->c = a;
         this->b = a;
         this->d = b;
+    }
+    rhomb(int a, int A, int B)
+    {
+        this->name = "ромб";
+        this->a = a;
+        this->c = a;
+        this->b = a;
+        this->d = a;
+        this->A = A;
+        this->B = B;
         this->C = A;
         this->D = B;
     }
